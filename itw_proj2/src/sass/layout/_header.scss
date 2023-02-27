@@ -1,0 +1,51 @@
+@use '../abstracts/' as *;
+
+header{
+    font-family: $sans;
+    width: 100%;
+    background-color: $cafe;
+    background: url(../img/legolas.jpg);
+    background-repeat: 50% 50%;
+    background-attachment: scroll;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    h1{
+        padding: calc(100%/5) 0 0 0;
+        font-size: 8em;
+        letter-spacing: .1em;
+        color: $myblack;
+        font-family: $immortal;
+    }
+    p{
+        font-family: $sans;
+        letter-spacing: 5px;
+        padding: 10px 15px;
+        font-size: 1.8em;
+        color: $somewhatgrey;
+        line-height: 1.2em;
+        margin-top: 3em;
+        background-image: linear-gradient(90deg,transparent,rgba(0,0,0,.35) 10%,rgba(0,0,0,.35) 90%,transparent);
+        text-shadow: 1px 1px 3px black;
+    }
+}
+
+@media (max-width: $break) {
+    header{
+            background-image: url(../img/legolas_small.jpg);
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: cover;
+            background-position: top;
+        h1{
+            padding: calc(100%/5) 0 0 0;
+            font-size: 4em;
+        }
+        p{
+            margin-top: 6em;
+            font-size: 1.4em;
+            line-height: 1em;
+        }
+    }
+}

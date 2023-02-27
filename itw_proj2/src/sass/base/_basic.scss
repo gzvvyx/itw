@@ -1,0 +1,15 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+*, ::after, ::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 100vh;
+}

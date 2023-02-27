@@ -1,0 +1,107 @@
+@use '../abstracts' as *;
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 5em;
+    z-index: 10;
+    ul{
+        position: relative;
+        height: 100%;
+        list-style: none;
+        transition: 1s;
+    }
+    li{
+        position: relative;
+        display: inline-block;
+        padding: calc((5em - 1.3em) / 2) 1.5em;
+        a{
+            color: $myblack;
+            letter-spacing: .5em;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.3em;
+            padding: inherit;
+            font-family: $immortal;
+        }
+    }
+
+}
+
+nav.scrolled{
+    ul{
+        background-color: #080503;
+        li{
+            a{
+                color: $cafe;
+                padding: inherit;
+            }
+        }
+    }
+}
+
+li.active{
+    transition: 1s;
+    &::before{
+        content: "";
+        width: 90%;
+        height: .3em;
+        background-color: $cafe;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0.65em;
+        transition: .5s ease;
+    }
+}
+
+.navbtn {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2em;
+    height: 2.5em;
+}
+
+.navbtn .line {
+    height: .5em;
+    width: 100%;
+    background-color: $cafe;
+}
+
+@media (max-width: $break) {
+    .navbar{
+        height: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .navbtn {
+            display: flex;
+        }
+        .navlinks{
+            display: none;
+            width: 100%;
+            justify-content: center;
+            background-color: $myblack;
+            ul{
+                display: flex;
+                flex-direction: column;
+                li{
+                    padding: calc((3em - 1.3em) / 2) 1.5em;
+                    text-align: center;
+                    a{
+                        font-size: 1em;
+                        padding: .5em .1em;
+                        color: $cafe;
+                    }
+                }
+            }
+            &.navshow {
+                display: flex;
+            }
+        }
+    }
+}
